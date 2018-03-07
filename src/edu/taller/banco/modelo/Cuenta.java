@@ -22,13 +22,18 @@ public class Cuenta {
         this._saldo = _saldo;
         this._fechaCreacion = _fechaCreacion;
         this.nomCliente = nomCliente;
+        movimientos= new Movimientos[100];
     }
     
-    public boolean addMovs(Date fecha, double saldo, double monto, Tipo tipo){
+    public boolean addMovs(Date fecha, double monto, Tipo tipo){
         for (int i=0;movimientos.length>i;i++){
             if (movimientos[i]==null){
-                Movimientos mov= new Movimientos(fecha,saldo,monto,tipo);
+                Movimientos mov= new Movimientos(fecha,this._saldo,monto,tipo);
                 movimientos[i]= mov;
+                if(mov.getTipo().getCode().equals("Retiro"))
+                    _saldo-=mov.getMonto();
+                else if(mov.getTipo().getCode().equals("Consignacion"))
+                    _saldo+=mov.getMonto();
                 return true;
             }
         }

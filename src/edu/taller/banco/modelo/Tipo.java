@@ -12,4 +12,11 @@ package edu.taller.banco.modelo;
 public class Tipo {
     private String _code;
     
+    public Tipo(String code){
+        _code=code;
+    }
+
+    public String getCode() {
+        return _code;
+    }
 }

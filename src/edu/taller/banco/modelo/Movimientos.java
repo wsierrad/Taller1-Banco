@@ -22,7 +22,7 @@ public class Movimientos {
         this._monto = _monto;
         this._tipo = _tipo;
     }
-
+    
     public Date getFecha() {
         return _fecha;
     }
@@ -49,9 +49,6 @@ public class Movimientos {
 
     public void setTipo(Tipo _tipo) {
         this._tipo = _tipo;
-    }
-    
-    
-    
+    } 
     
 }
