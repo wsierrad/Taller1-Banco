@@ -28,9 +28,10 @@ public class Banco {
                     "\nFecha de creación: " + cuenta.getFechaCreacion().toString() +
                     "\nNombre del Cliente: " + cuenta.getNomCliente();
             Movimientos[] movs=cuenta.getMovimientos();
+            mensaje += "\nMovimientos: ";
             for (int i=0;movs.length>i;i++){
                 if (movs[i]!=null){
-                mensaje = mensaje + "\nMovimientos: " + "\nFecha: " + movs[i].getFecha().toString()+
+                mensaje +="\nFecha: " + movs[i].getFecha().toString()+
                         "\nSaldo Precedente: " + movs[i].getSaldoPrecedente()+
                         "\nMonto: " + movs[i].getMonto() + 
                         "\nTipo: " + movs[i].getTipo().getCode();
